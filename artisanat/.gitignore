@@ -1,0 +1,5 @@
+db.sqlite3
+env/
+artisanat/__pycache__
+store/__pycache__/
+store/migrations/__pycache__/
