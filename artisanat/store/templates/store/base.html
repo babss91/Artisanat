@@ -13,12 +13,12 @@
 </head>
 
 <body>
-
+    <!-- header -->
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
                 <nav class="navbar navbar-expand-sm navbar-light bg-info p-3">
-                    <a class="navbar-brand" href="#">Nabss Artisanat</a>
+                    <a class="navbar-brand" href="{% url 'store:index' %}">Nabss Artisanat</a>
                     <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse"
                         data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
                         aria-label="Toggle navigation">
@@ -26,15 +26,13 @@
                     </button>
                     <div class="collapse navbar-collapse" id="collapsibleNavId">
                         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                            <li class="nav-item active">
-                                <a class="nav-link" href="#">Link 1 </a>
-                            </li>
+
+                            {% for artisanat in artisanats %}
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Link 2</a>
+                                <a class="nav-link" href="{% url 'store:category' artisanat.id %}">{{artisanat.category}}</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Link 3</a>
-                            </li>
+                            {% endfor %}
+
                         </ul>
 
                         <div style="margin-right: 100px;">
@@ -47,8 +45,19 @@
         </div>
     </div>
 
-    <div class="container-fluid" id="content">
+    <!-- content -->
+    <div class="container-fluid">
+        <div class="col-md-12 my-2" id="content">
+        <div class="row">
+            <div class="col-md-12 " style="height: 50px;"> </div>
+        </div>
+
         {% block content %}{% endblock content %}
+
+        <div class="row">
+            <div class="col-md-12 " style="height: 10px;"> </div>
+        </div>
+    </div>
     </div>
 
 

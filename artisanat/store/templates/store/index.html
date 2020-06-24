@@ -1,37 +1,25 @@
 {% extends 'store/base.html' %}
 {% load static %}
 {% block content %}
-<div class="row">
-    <div class="col-md-12 "style="height: 150px;"> </div>
-</div>
+
 
 <div class="container ">
-    <div class="row bg-white p-2">
+    <div class="row bg-white p-4">
+        {% for artisanat in artisanats %}
         <div class="col-md-3">
-            <div class="border border-dark p-2">
-                <h3>Autre 1</h3>
+            <div class="card">
+                <img class="card-img-top" src=" static/store/img/{{artisanat.img_category}}.jpg" alt="{{artisanat.category}}" style="height: 200px;">
+                <div class="card-body">
+                    <h4 class="card-title">{{artisanat.category}}</h4>
+                </div>
             </div>
         </div>
-        <div class="col-md-3">
-            <div class="border border-dark p-2">
-                <h3>Autre 2</h3>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="border border-dark p-2">
-                <h3>Autre 3</h3>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="border border-dark p-2">
-                <h3>Autre 4</h3>
-            </div>
-        </div>
+        {% endfor %}
     </div>
 </div>
 
 
-<div class="container my-4 "  style="height: 300px;">
+<div class="container my-4 " style="height: 300px;">
     <div class="row bg-white p-2">
 
         <div class="col">
@@ -49,23 +37,23 @@
                 </ol>
                 <div class="carousel-inner" role="listbox">
                     <div class="carousel-item active" style="height: 300px;">
-                        <img src="{% static 'store/img/chombo.jpg' %}" alt="chombo" class="img-fluid w-100">
+                        <img src="{% static 'store/img/porte_coran.jpg' %}" alt="porte coran" class="img-fluid w-100">
                         <div class="carousel-caption d-none d-md-block">
-                            <h3>Chombo</h3>
+                            <h3 class="text-success">porte coran</h3>
                             <p>Description</p>
                         </div>
                     </div>
                     <div class="carousel-item" style="height: 300px;">
                         <img src="{% static 'store/img/mayotte.jpg' %}" alt="carte" class="img-fluid w-100">
                         <div class="carousel-caption d-none d-md-block">
-                            <h3>carte mayotte</h3>
+                            <h3 class="text-success">carte mayotte</h3>
                             <p>Description</p>
                         </div>
                     </div>
                     <div class="carousel-item" style="height: 300px;">
                         <img src="{% static 'store/img/chino.jpg' %}" alt="chino" class="img-fluid w-100">
                         <div class="carousel-caption d-none d-md-block">
-                            <h3>Chino</h3>
+                            <h3 class="text-success">Chino</h3>
                             <p>Description</p>
                         </div>
                     </div>
@@ -86,7 +74,5 @@
 
 
 
-<div class="row">
-    <div class="col-md-12 "style="height: 10px;"> </div>
-</div>
+
 {% endblock content %}
